@@ -1,0 +1,18 @@
+cd C:\Users\sahil\python
+
+python -m pygarl plist
+
+python -m pygarl sprint -p COm6
+#to open the serial port
+
+cd demo1
+
+python -m pygarl record -p COM6 -d . -g d,32,h,r,u,v,1,3,p,r,o,j,e,c,t,3,+ -a 6 -m discrete
+
+
+python -m pygarl record -p COM8 -d . -g d,32,h,r,u,v,1,3,+ -a 6 -m discrete
+
+python -m pygarl record -p COM8 -d . -g d,32,h,r,u,v,1,3,p,r,o,j,e,c,t,3,+ -a 6 -m discrete -a 6 -m discrete
+python -m pygarl train -d . -c svm C:\mode.svm
+
+d,32,h,r,u,v,1,3,+
